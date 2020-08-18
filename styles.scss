@@ -337,6 +337,33 @@ header {
         padding-left: rem(60px);
       }
 
+      hr.nav-separator {
+        align-self: flex-end;
+        margin: rem(5px) 0;
+        flex-shrink: 0;
+
+        &.nav-level-0 {
+          width: calc(100% - #{rem(20px)});
+        }
+
+        &.nav-level-1 {
+          width: calc(100% - #{rem(30px)});
+        }
+
+        &.nav-level-2 {
+          width: calc(100% - #{rem(40px)});
+        }
+
+        &.nav-level-3 {
+          width: calc(100% - #{rem(50px)});
+        }
+
+        &.nav-level-4 {
+          width: calc(100% - #{rem(60px)});
+        }
+
+      }
+
       &.hidden {
         display: none;
       }

@@ -1,11 +1,3 @@
-<!-- NOTE: This template will generate each page per section (if multipage)
-or the single page with all sections of the documentation.
-
-You should use Handlebars templating syntax with the template API (refer to API Reference
-in the documentation for more info) to plug in all the contents of the documentation into this page. -->
-
-<!-- NOTE: All links to theme assets or user assets should be prefixed with "{{rootPrefix}}/assets/theme/". -->
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -36,13 +28,18 @@ in the documentation for more info) to plug in all the contents of the documenta
           <line x2="35" transform="translate(82.5 60)" fill="none" stroke-linecap="round" stroke-width="3"/>
         </g>
       </svg>
-      <img src="{{rootPrefix}}/assets/theme/images/logo-header.svg" alt="Steroids">
+      <a href="{{versionRootPrefix}}">
+        <img src="{{rootPrefix}}/assets/theme/images/logo-header.svg" alt="Steroids">
+      </a>
     </header>
     <div class="main">
       <div class="left-pane">
         <nav>
           {{#each sections}}
             <a class="nav-level-{{level}}{{#if selected}} nav-selected{{/if}}" href="{{link}}">{{title}}</a>
+            {{#if (hasChild ../sections @index)}}
+              <hr class="nav-separator nav-level-{{level}}">
+            {{/if}}
           {{/each}}
         </nav>
         {{#if versions}}
