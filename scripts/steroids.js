@@ -16,6 +16,7 @@ function toggleLeftPane() {
 
 window.onload = () => {
 
+  // Attach heading link buttons
   const btn = document.getElementById('button_link');
 
   document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6')
@@ -23,6 +24,20 @@ window.onload = () => {
 
     h.prepend(btn.content.cloneNode(true));
     h.children[0].setAttribute('href', '#' + h.id);
+
+  });
+
+  // Wrap tables
+  document.querySelectorAll('table')
+  .forEach(table => {
+
+    const wrapper = document.createElement('DIV');
+
+    wrapper.classList.add('table-wrapper');
+    wrapper.appendChild(table.cloneNode(true));
+
+    table.parentElement.insertBefore(wrapper, table);
+    table.parentElement.removeChild(table);
 
   });
 

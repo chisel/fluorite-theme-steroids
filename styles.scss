@@ -151,6 +151,11 @@ blockquote {
 
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   margin-block-start: rem(20px);
