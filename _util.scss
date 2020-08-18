@@ -1,0 +1,8 @@
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@function color($name) {
+  @return map-get($palette, $name);
+}
