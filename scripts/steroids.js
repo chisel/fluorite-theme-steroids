@@ -13,3 +13,17 @@ function toggleLeftPane() {
   document.querySelector('.backblur').classList.toggle('visible');
 
 }
+
+window.onload = () => {
+
+  const btn = document.getElementById('button_link');
+
+  document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6')
+  .forEach(h => {
+
+    h.prepend(btn.content.cloneNode(true));
+    h.children[0].setAttribute('href', '#' + h.id);
+
+  });
+
+};
