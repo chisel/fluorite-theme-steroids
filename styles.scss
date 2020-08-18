@@ -322,19 +322,23 @@ header {
       }
 
       a.nav-level-1 {
-        padding-left: rem(30px);
+        margin-left: rem(10px);
+        width: calc(100% - #{rem(10px)});
       }
 
       a.nav-level-2 {
-        padding-left: rem(40px);
+        margin-left: rem(20px);
+        width: calc(100% - #{rem(20px)});
       }
 
       a.nav-level-3 {
-        padding-left: rem(50px);
+        margin-left: rem(30px);
+        width: calc(100% - #{rem(30px)});
       }
 
       a.nav-level-4 {
-        padding-left: rem(60px);
+        margin-left: rem(40px);
+        width: calc(100% - #{rem(40px)});
       }
 
       hr.nav-separator {
