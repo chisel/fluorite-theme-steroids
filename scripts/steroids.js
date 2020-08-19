@@ -46,8 +46,10 @@ window.onload = () => {
 
   if ( selectedNav ) {
 
-    if ( selectedNav.scrollIntoViewIfNeeded ) selectedNav.scrollIntoViewIfNeeded(true);
-    else if ( selectedNav.scrollIntoView ) selectedNav.scrollIntoView();
+    if ( selectedNav.scrollIntoView ) selectedNav.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth'
+    });
 
   }
 
