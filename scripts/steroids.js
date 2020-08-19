@@ -41,4 +41,14 @@ window.onload = () => {
 
   });
 
+  // Scroll selected nav into view
+  const selectedNav = document.querySelector('a.nav-selected');
+
+  if ( selectedNav ) {
+
+    if ( selectedNav.scrollIntoViewIfNeeded ) selectedNav.scrollIntoViewIfNeeded(true);
+    else if ( selectedNav.scrollIntoView ) selectedNav.scrollIntoView();
+
+  }
+
 };
