@@ -14,6 +14,15 @@ function toggleLeftPane() {
 
 }
 
+function toggleMenuContainer(arrow, event) {
+
+  event.preventDefault();
+
+  arrow.classList.toggle('collapse');
+  arrow.parentElement.nextElementSibling.classList.toggle('visible');
+
+}
+
 window.onload = () => {
 
   // Attach heading link buttons
@@ -44,12 +53,6 @@ window.onload = () => {
   // Scroll selected nav into view
   const selectedNav = document.querySelector('a.nav-selected');
 
-  if ( selectedNav ) {
-
-    if ( selectedNav.scrollIntoView ) selectedNav.scrollIntoView({
-      block: 'center'
-    });
-
-  }
+  if ( selectedNav && selectedNav.scrollIntoView ) selectedNav.scrollIntoView({ block: 'center' });
 
 };

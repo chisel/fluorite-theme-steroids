@@ -61,9 +61,21 @@
       <div class="left-pane">
         <nav>
           {{#each sections}}
-            <a class="nav-level-{{level}}{{#if selected}} nav-selected{{/if}}" href="{{link}}">{{title}}</a>
+            {{#each (endOfParent ../sections @index)}}</div>{{/each}}
+            <a class="nav-level-{{level}}{{#if selected}} nav-selected{{/if}}{{#if (hasChild ../sections @index)}} nav-with-arrow{{/if}}" href="{{link}}">
+              {{title}}
+              {{#if (hasChild ../sections @index)}}
+                <svg onclick="toggleMenuContainer(this, event)" class="nav-arrow{{#if (ancestorOfSelected ../sections @index ../path)}} collapse{{/if}}" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                  <g transform="translate(-230 -276)">
+                    <line x2="5" y2="5" transform="translate(239 288)" fill="none" stroke-linecap="round" stroke-width="3"/>
+                    <line x1="5" y2="5" transform="translate(244 288)" fill="none" stroke-linecap="round" stroke-width="3"/>
+                  </g>
+                </svg>
+              {{/if}}
+            </a>
             {{#if (hasChild ../sections @index)}}
-              <hr class="nav-separator nav-level-{{level}}">
+              <div class="nav-container{{#if (ancestorOfSelected ../sections @index ../path)}} visible{{/if}}">
+                <hr class="nav-separator nav-level-{{level}}">
             {{/if}}
           {{/each}}
         </nav>
