@@ -265,6 +265,7 @@ header {
     border-top: rem(1px) solid color(gray-medium);
     background-color: color(gray-lighter);
     line-height: normal;
+    margin-top: auto;
   }
 
   .left-pane {
@@ -482,7 +483,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     overflow-y: auto;
 
     .backblur {
@@ -500,7 +500,6 @@ header {
       max-width: rem(800px);
       width: 100%;
       padding: rem(30px) rem(50px);
-      flex-grow: 1;
 
       & > *:first-child {
         margin-top: 0;
