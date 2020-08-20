@@ -30,6 +30,10 @@ a {
 
 }
 
+li:not(:last-child) {
+  margin-bottom: rem(5px);
+}
+
 code {
   font-family: 'Roboto Mono', monospace;
 }
